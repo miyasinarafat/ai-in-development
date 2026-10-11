@@ -20,15 +20,17 @@ export const slides: SlideDef[] = [
     content: (
       <div className="flex h-full flex-col justify-center">
         <Eyebrow>AI in Development · Week 0</Eyebrow>
-        <h1 className="mb-8 text-[132px] font-bold leading-[1.0] tracking-tight text-white">
+        <h1 className="mb-8 text-[132px] font-bold leading-[1.0] tracking-tight text-strong">
           Building an
           <br />
           <span className="text-accent">AI-native</span> engineering team
         </h1>
-        <p className="mb-12 max-w-[1300px] text-[44px] leading-snug text-slate-300">
+        <p className="mb-12 max-w-[1300px] text-[44px] leading-snug text-body">
           Kickoff &amp; baseline: where we are, where we are going, and how we will get there
           together.
         </p>
+        <div className="mb-8 h-[10px] w-[220px] rounded-full bg-lime" />
+        <div className="mb-3 text-[40px] font-semibold text-strong">Presented by Arafat</div>
         <div className="flex items-center gap-6 text-[32px] text-muted">
           <span>Grameenphone</span>
           <span>·</span>
@@ -103,7 +105,7 @@ export const slides: SlideDef[] = [
             Credits, cycle time, quality and confidence, tracked before and after.
           </Card>
         </div>
-        <p className="pt-8 text-[34px] text-slate-300">
+        <p className="pt-8 text-[34px] text-body">
           Licences don&apos;t make a team AI-native. Habits and systems do.
         </p>
       </div>
@@ -135,13 +137,13 @@ export const slides: SlideDef[] = [
             >
               <div className="text-[84px] font-bold leading-none text-accent">{n}</div>
               <div>
-                <div className="mb-2 text-[36px] font-semibold text-white">{t}</div>
-                <div className="text-[28px] text-slate-300">{d}</div>
+                <div className="mb-2 text-[36px] font-semibold text-strong">{t}</div>
+                <div className="text-[28px] text-body">{d}</div>
               </div>
             </div>
           ))}
         </div>
-        <p className="pt-8 text-[34px] text-slate-300">
+        <p className="pt-8 text-[34px] text-body">
           More autonomy needs better context, tighter review and cost control.
         </p>
       </div>
@@ -175,13 +177,13 @@ export const slides: SlideDef[] = [
                 <span className="text-[30px] text-muted"> min</span>
               </div>
               <div>
-                <div className="text-[38px] font-semibold text-white">{t}</div>
-                <div className="text-[28px] text-slate-300">{d}</div>
+                <div className="text-[38px] font-semibold text-strong">{t}</div>
+                <div className="text-[28px] text-body">{d}</div>
               </div>
             </div>
           ))}
         </div>
-        <p className="pt-6 text-[32px] text-slate-300">
+        <p className="pt-6 text-[32px] text-body">
           Every session leaves one artifact in a shared repo.
         </p>
       </div>
@@ -245,21 +247,21 @@ export const slides: SlideDef[] = [
           <Bullets
             items={[
               <>
-                <b className="text-white">Scope the prompt:</b> name the files, the goal, what is out of
+                <b className="text-strong">Scope the prompt:</b> name the files, the goal, what is out of
                 scope
               </>,
               <>
-                <b className="text-white">Fresh context</b> for each task; trim long sessions
+                <b className="text-strong">Fresh context</b> for each task; trim long sessions
               </>,
               <>
-                <b className="text-white">Right model for the job:</b> strong for planning, lighter for
+                <b className="text-strong">Right model for the job:</b> strong for planning, lighter for
                 routine edits
               </>,
               <>
-                <b className="text-white">Keep instruction files short</b>; they load on every request
+                <b className="text-strong">Keep instruction files short</b>; they load on every request
               </>,
               <>
-                <b className="text-white">Add tools and agents</b> only when they pay for themselves
+                <b className="text-strong">Add tools and agents</b> only when they pay for themselves
               </>,
             ]}
           />
@@ -295,7 +297,7 @@ export const slides: SlideDef[] = [
         <div className="flex items-start justify-between">
           <div>
             <Eyebrow>Baseline 1 of 2</Eyebrow>
-            <h1 className="mb-4 text-[56px] font-bold leading-tight text-white">
+            <h1 className="mb-4 text-[56px] font-bold leading-tight text-strong">
               Readiness scorecard
             </h1>
           </div>
@@ -337,8 +339,8 @@ export const slides: SlideDef[] = [
               key={m}
               className="grid grid-cols-[1.2fr_1.6fr_0.8fr] border-t-2 border-line px-8 py-[18px]"
             >
-              <div className="font-semibold text-white">{m}</div>
-              <div className="text-slate-300">{s}</div>
+              <div className="font-semibold text-strong">{m}</div>
+              <div className="text-body">{s}</div>
               <div className="text-accent-2">to collect</div>
             </div>
           ))}
@@ -363,13 +365,13 @@ export const slides: SlideDef[] = [
             {["GP Web", "GPFI", "GP Shop", "FlexiPlan", "Roaming"].map((r) => (
               <span
                 key={r}
-                className="rounded-xl border-2 border-line bg-card px-7 py-4 text-[36px] font-semibold text-white"
+                className="rounded-xl border-2 border-line bg-card px-7 py-4 text-[36px] font-semibold text-strong"
               >
                 {r}
               </span>
             ))}
           </div>
-          <div className="space-y-4 text-[32px] text-slate-300">
+          <div className="space-y-4 text-[32px] text-body">
             <div className="rounded-xl border-2 border-dashed border-line px-6 py-4">
               Pilot repos: ______________ and ______________
             </div>
@@ -448,7 +450,7 @@ export const slides: SlideDef[] = [
             <div className="mt-6 text-[28px] text-accent-2">Owner: ____________</div>
           </Card>
         </div>
-        <p className="pt-8 text-[32px] text-slate-300">
+        <p className="pt-8 text-[32px] text-body">
           Presenters rotate from about Week 6. Every hands-on pairs a developer with QA.
         </p>
       </div>
@@ -477,7 +479,7 @@ export const slides: SlideDef[] = [
         </div>
         <div className="flex w-[600px] flex-col justify-center">
           <Card title="Next Monday · Week 1" accent>
-            <div className="text-[34px] font-semibold text-white">How coding agents work</div>
+            <div className="text-[34px] font-semibold text-strong">How coding agents work</div>
             <ul className="mt-4 list-disc space-y-2 pl-7">
               <li>The agent loop</li>
               <li>Tools and context</li>
@@ -498,7 +500,7 @@ export const slides: SlideDef[] = [
     content: (
       <div className="flex h-full flex-col justify-center">
         <Eyebrow>Discussion</Eyebrow>
-        <h1 className="mb-12 text-[96px] font-bold leading-tight text-white">
+        <h1 className="mb-12 text-[96px] font-bold leading-tight text-strong">
           Your turn.
         </h1>
         <Bullets

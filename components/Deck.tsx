@@ -16,9 +16,21 @@ function readHash() {
   return Number.isNaN(n) ? 0 : Math.min(slides.length - 1, Math.max(0, n - 1));
 }
 
+type Theme = "dark" | "light";
+
+function subscribeTheme(cb: () => void) {
+  window.addEventListener("themechange", cb);
+  return () => window.removeEventListener("themechange", cb);
+}
+
+function readTheme(): Theme {
+  return document.documentElement.dataset.theme === "light" ? "light" : "dark";
+}
+
 export default function Deck() {
   // The URL hash is the source of truth (#3 = third slide), so refresh and deep links work.
   const index = useSyncExternalStore(subscribeHash, readHash, () => 0);
+  const theme = useSyncExternalStore(subscribeTheme, readTheme, () => "dark" as Theme);
   const [scale, setScale] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
@@ -35,6 +47,15 @@ export default function Deck() {
     fit();
     window.addEventListener("resize", fit);
     return () => window.removeEventListener("resize", fit);
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    const next: Theme = readTheme() === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch {}
+    window.dispatchEvent(new Event("themechange"));
   }, []);
 
   useEffect(() => {
@@ -66,6 +87,10 @@ export default function Deck() {
         case "O":
           setShowGrid((v) => !v);
           break;
+        case "t":
+        case "T":
+          toggleTheme();
+          break;
         case "f":
         case "F":
           if (document.fullscreenElement) document.exitFullscreen();
@@ -78,7 +103,7 @@ export default function Deck() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [go, index]);
+  }, [go, index, toggleTheme]);
 
   const slide = slides[index];
 
@@ -96,8 +121,11 @@ export default function Deck() {
         <div className="relative h-full w-full overflow-hidden bg-background">
           <div className="absolute inset-x-0 top-0 h-[6px] bg-line">
             <div
-              className="h-full bg-accent transition-all duration-300"
-              style={{ width: `${((index + 1) / slides.length) * 100}%` }}
+              className="h-full transition-all duration-300"
+              style={{
+                width: `${((index + 1) / slides.length) * 100}%`,
+                background: "linear-gradient(90deg, var(--blue-from), var(--blue-to))",
+              }}
             />
           </div>
 
@@ -107,13 +135,22 @@ export default function Deck() {
 
           <div className="absolute inset-x-[120px] bottom-[36px] flex items-center justify-between text-[22px] text-muted">
             <span>AI in Development · Week 0 · Kickoff &amp; Baseline</span>
-            <span className="font-mono">
-              {index + 1} / {slides.length}
+            <span className="flex items-center gap-8">
+              <button
+                onClick={toggleTheme}
+                className="relative z-10 rounded-md border border-line px-3 py-1 text-[20px] hover:border-accent"
+                aria-label="Toggle light or dark theme"
+              >
+                {theme === "dark" ? "☀ Light" : "☾ Dark"}
+              </button>
+              <span className="font-mono">
+                {index + 1} / {slides.length}
+              </span>
             </span>
           </div>
 
           {showNotes && (
-            <div className="absolute inset-x-0 bottom-0 z-10 max-h-[46%] overflow-auto border-t-2 border-accent-2 bg-[#0f1a2e]/95 px-[120px] py-[28px] text-[30px] leading-snug text-slate-200">
+            <div className="absolute inset-x-0 bottom-0 z-10 max-h-[46%] overflow-auto border-t-2 border-accent-2 bg-notes px-[120px] py-[28px] text-[30px] leading-snug text-body-hi">
               <div className="mb-2 text-[22px] font-semibold uppercase tracking-widest text-accent-2">
                 Speaker notes · {slide.minutes} min
               </div>

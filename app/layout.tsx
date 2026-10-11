@@ -17,12 +17,20 @@ export const metadata: Metadata = {
   description: "Kickoff and baseline for the weekly AI in Development session.",
 };
 
+// Runs before first paint so the saved theme never flashes.
+const themeInit = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-theme="dark"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+      </head>
       <body className="min-h-full">{children}</body>
     </html>
   );

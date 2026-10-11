@@ -22,6 +22,7 @@ npm run build && npm start   # http://localhost:3000
 | `Home` / `End` | First / last slide |
 | `N` | Toggle speaker notes |
 | `O` | Slide overview |
+| `T` | Switch dark / light theme (remembered) |
 | `F` | Fullscreen |
 
 The URL hash is the slide number (`/#8` is the readiness scorecard), so a refresh keeps your place.
@@ -33,3 +34,4 @@ The deck is a fixed 1920x1080 stage scaled to fit any screen.
 - `components/Deck.tsx`: navigation, scaling, notes, overview
 - `components/Scorecard.tsx`: interactive readiness scorecard (slide 8)
 - `components/ui.tsx`: shared slide building blocks
+- `app/globals.css`: Grameenphone-inspired colour tokens for both themes

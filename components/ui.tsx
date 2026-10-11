@@ -10,7 +10,7 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 
 export function Title({ children }: { children: ReactNode }) {
   return (
-    <h1 className="mb-10 text-[72px] font-bold leading-[1.05] tracking-tight text-white">
+    <h1 className="mb-10 text-[72px] font-bold leading-[1.05] tracking-tight text-strong">
       {children}
     </h1>
   );
@@ -33,15 +33,15 @@ export function Card({
         accent ? "border-accent" : "border-line"
       } ${className}`}
     >
-      {title && <div className="mb-3 text-[34px] font-semibold text-white">{title}</div>}
-      <div className="text-[30px] leading-snug text-slate-300">{children}</div>
+      {title && <div className="mb-3 text-[34px] font-semibold text-strong">{title}</div>}
+      <div className="text-[30px] leading-snug text-body">{children}</div>
     </div>
   );
 }
 
 export function Bullets({ items }: { items: ReactNode[] }) {
   return (
-    <ul className="space-y-4 text-[38px] leading-snug text-slate-200">
+    <ul className="space-y-4 text-[38px] leading-snug text-body-hi">
       {items.map((it, i) => (
         <li key={i} className="flex gap-5">
           <span className="mt-[18px] h-3 w-3 shrink-0 rounded-full bg-accent" />

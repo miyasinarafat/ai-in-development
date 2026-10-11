@@ -28,7 +28,7 @@ export default function Scorecard() {
             className="flex items-center justify-between rounded-xl border-2 border-line bg-card px-6 py-2"
           >
             <div className="max-w-[820px]">
-              <div className="text-[28px] font-semibold leading-tight text-white">{a.name}</div>
+              <div className="text-[28px] font-semibold leading-tight text-strong">{a.name}</div>
               <div className="text-[20px] leading-tight text-muted">{a.q}</div>
             </div>
             <div className="flex gap-3">
@@ -40,8 +40,8 @@ export default function Scorecard() {
                   }
                   className={`h-[52px] w-[52px] rounded-lg border-2 text-[28px] font-bold ${
                     scores[i] === n
-                      ? "border-accent bg-accent text-slate-900"
-                      : "border-line text-slate-300 hover:border-accent"
+                      ? "border-accent bg-accent text-on-accent"
+                      : "border-line text-body hover:border-accent"
                   }`}
                 >
                   {n}
@@ -58,14 +58,14 @@ export default function Scorecard() {
           <div className="my-2 text-[120px] font-bold leading-none text-accent">
             {rated.length ? avg.toFixed(1) : "–"}
           </div>
-          <div className="text-[30px] text-slate-200">
+          <div className="text-[30px] text-body-hi">
             {rated.length ? levels[Math.round(avg)] : "Tap to rate"}
           </div>
           <div className="mt-2 text-[22px] text-muted">
             {rated.length} of {areas.length} areas rated
           </div>
         </div>
-        <div className="space-y-2 text-[24px] text-slate-300">
+        <div className="space-y-2 text-[24px] text-body">
           {levels.slice(1).map((l, i) => (
             <div key={l} className="flex gap-3">
               <span className="font-mono text-accent">{i + 1}</span>
