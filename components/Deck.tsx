@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
-import { slides } from "./slides";
+import { SITE } from "@/lib/site";
+import type { DeckDef } from "@/lib/deck";
 
 const STAGE_W = 1920;
 const STAGE_H = 1080;
@@ -11,9 +12,9 @@ function subscribeHash(cb: () => void) {
   return () => window.removeEventListener("hashchange", cb);
 }
 
-function readHash() {
+function readHash(count: number) {
   const n = parseInt(window.location.hash.slice(1), 10);
-  return Number.isNaN(n) ? 0 : Math.min(slides.length - 1, Math.max(0, n - 1));
+  return Number.isNaN(n) ? 0 : Math.min(count - 1, Math.max(0, n - 1));
 }
 
 type Theme = "dark" | "light";
@@ -27,18 +28,26 @@ function readTheme(): Theme {
   return document.documentElement.dataset.theme === "light" ? "light" : "dark";
 }
 
-export default function Deck() {
+export default function Deck({ deck }: { deck: DeckDef }) {
+  const { slides } = deck;
   // The URL hash is the source of truth (#3 = third slide), so refresh and deep links work.
-  const index = useSyncExternalStore(subscribeHash, readHash, () => 0);
+  const index = useSyncExternalStore(
+    subscribeHash,
+    () => readHash(slides.length),
+    () => 0,
+  );
   const theme = useSyncExternalStore(subscribeTheme, readTheme, () => "dark" as Theme);
   const [scale, setScale] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
 
-  const go = useCallback((next: number) => {
-    const clamped = Math.min(slides.length - 1, Math.max(0, next));
-    window.location.hash = `#${clamped + 1}`;
-  }, []);
+  const go = useCallback(
+    (next: number) => {
+      const clamped = Math.min(slides.length - 1, Math.max(0, next));
+      window.location.hash = `#${clamped + 1}`;
+    },
+    [slides.length],
+  );
 
   // Fit the fixed 1920x1080 stage to whatever window or projector we get.
   useEffect(() => {
@@ -103,7 +112,7 @@ export default function Deck() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [go, index, toggleTheme]);
+  }, [go, index, toggleTheme, slides.length]);
 
   const slide = slides[index];
 
@@ -134,7 +143,9 @@ export default function Deck() {
           </div>
 
           <div className="absolute inset-x-[120px] bottom-[36px] flex items-center justify-between text-[22px] text-muted">
-            <span>AI in Development · Week 0 · Kickoff &amp; Baseline</span>
+            <span>
+              {SITE.series} · {deck.label} · {deck.topic}
+            </span>
             <span className="flex items-center gap-8">
               <button
                 onClick={toggleTheme}

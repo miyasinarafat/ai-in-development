@@ -2,13 +2,15 @@
 
 Slides for the weekly **AI in Development** session (Mondays, 3-4 PM): building an AI-native engineering team.
 
-One branch per session. `week-0` holds the kickoff and baseline deck.
+One deck per week in `decks/<slug>/`, served at `/<slug>`; the index at `/` lists them. One git branch per week.
+
+New week: `npm run new-deck -- week-1 "Topic" "Monday, 19 October 2026"`. See [docs/AUTHORING.md](docs/AUTHORING.md).
 
 ## Run
 
 ```bash
 npm install
-npm run build && npm start   # http://localhost:3000
+npm run build && npm start   # http://localhost:3000  (index), /week-0 (deck)
 ```
 
 (`npm run dev` also works on machines with enough file-watcher capacity.)
@@ -25,13 +27,15 @@ npm run build && npm start   # http://localhost:3000
 | `T` | Switch dark / light theme (remembered) |
 | `F` | Fullscreen |
 
-The URL hash is the slide number (`/#8` is the readiness scorecard), so a refresh keeps your place.
+The URL hash is the slide number (`/week-0#8` is the readiness scorecard), so a refresh keeps your place.
 The deck is a fixed 1920x1080 stage scaled to fit any screen.
 
 ## Structure
 
-- `components/slides.tsx`: slide content and speaker notes
-- `components/Deck.tsx`: navigation, scaling, notes, overview
-- `components/Scorecard.tsx`: interactive readiness scorecard (slide 8)
-- `components/ui.tsx`: shared slide building blocks
+- `decks/<slug>/index.tsx`: slides and speaker notes for one week
+- `decks/index.ts`: registry of decks
+- `components/templates.tsx`: reusable slide layouts
+- `components/ui.tsx`: shared building blocks
+- `components/Deck.tsx`: player (navigation, scaling, notes, overview, theme)
+- `lib/site.ts`: series, organisation, presenter
 - `app/globals.css`: Grameenphone-inspired colour tokens for both themes

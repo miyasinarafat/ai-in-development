@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI in Development · Week 0",
-  description: "Kickoff and baseline for the weekly AI in Development session.",
+  title: "AI in Development",
+  description: "Weekly AI in Development session decks.",
 };
 
 // Runs before first paint so the saved theme never flashes.
