@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI in Development
 
-## Getting Started
+Slides for the weekly **AI in Development** session (Mondays, 3-4 PM): building an AI-native engineering team.
 
-First, run the development server:
+One deck per week in `decks/<slug>/`, served at `/<slug>`; the index at `/` lists them. One git branch per week.
+
+New week: `npm run new-deck -- week-1 "Topic" "Monday, 19 October 2026"`. See [docs/AUTHORING.md](docs/AUTHORING.md).
+
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run build && npm start   # http://localhost:3000  (index), /week-0 (deck)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(`npm run dev` also works on machines with enough file-watcher capacity.)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Presenting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Key | Action |
+|---|---|
+| `→` / `Space` / `PageDown` | Next slide |
+| `←` / `PageUp` | Previous slide |
+| `Home` / `End` | First / last slide |
+| `N` | Toggle speaker notes |
+| `O` | Slide overview |
+| `T` | Switch dark / light theme (remembered) |
+| `F` | Fullscreen |
 
-## Learn More
+The URL hash is the slide number (`/week-0#8` is the readiness scorecard), so a refresh keeps your place.
+The deck is a fixed 1920x1080 stage scaled to fit any screen.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `decks/<slug>/index.tsx`: slides and speaker notes for one week
+- `decks/index.ts`: registry of decks
+- `components/templates.tsx`: reusable slide layouts
+- `components/ui.tsx`: shared building blocks
+- `components/Deck.tsx`: player (navigation, scaling, notes, overview, theme)
+- `lib/site.ts`: series, organisation, presenter
+- `app/globals.css`: Grameenphone-inspired colour tokens for both themes

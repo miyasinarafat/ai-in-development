@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Grameenphone brand palette (sampled from grameenphone.com):
+ *   blue #0078cf / gradient #007bd1 -> #19aaf8, light blue #a3deff, lime #c6e103.
+ * Dark is the default theme; set data-theme="light" on <html> for the light one.
+ */
+:root,
+:root[data-theme="dark"] {
+  --background: #07182b;
+  --card: #0e2540;
+  --line: #1d3a5c;
+  --strong: #ffffff;
+  --body-hi: #e2edf7;
+  --body: #b7c7d8;
+  --muted: #8aa0b6;
+  --accent: #19aaf8;
+  --accent-2: #c6e103;
+  --on-accent: #04223d;
+  --notes: #0b2038;
+  --lime: #c6e103;
+  --blue-from: #007bd1;
+  --blue-to: #19aaf8;
+}
+
+:root[data-theme="light"] {
+  --background: #f4f9fe;
+  --card: #ffffff;
+  --line: #cfe0ef;
+  --strong: #0a2540;
+  --body-hi: #1b3550;
+  --body: #46596c;
+  --muted: #5f7286;
+  --accent: #0078cf;
+  --accent-2: #6b7a00;
+  --on-accent: #ffffff;
+  --notes: #e6f1fb;
+  --lime: #c6e103;
+  --blue-from: #007bd1;
+  --blue-to: #19aaf8;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-strong: var(--strong);
+  --color-body-hi: var(--body-hi);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-on-accent: var(--on-accent);
+  --color-notes: var(--notes);
+  --color-lime: var(--lime);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--body-hi);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
