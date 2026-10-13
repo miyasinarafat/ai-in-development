@@ -1,6 +1,6 @@
 # AI in Development
 
-Slides for the weekly **AI in Development** session (Mondays, 3-4 PM): building an AI-native engineering team.
+Slides for the weekly **AI in Development** session (Mondays, 3-4 PM): building an AI-native engineering team at Grameenphone.
 
 One deck per week in `decks/<slug>/`, served at `/<slug>`; the index at `/` lists them. One git branch per week.
 
