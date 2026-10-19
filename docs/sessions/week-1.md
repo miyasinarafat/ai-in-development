@@ -109,3 +109,25 @@ One thing that surprised us: __________________________
 4. Optional: write a LinkedIn and X post with the `diagram-social-post` skill
    (for example, "Why Agent Sessions Cost Credits", using public facts only).
 5. Prepare Week 2: credit and token rules, plus the team's first shared skill.
+
+## Homework (the hands-on moved here)
+The hands-on did not happen in the session, so it became homework:
+https://ai-in-development.vercel.app/homework/week-1 (due Friday, 23 October 2026, 5 PM).
+Each person traces one agent session, fills the worksheet on the page, presses "Copy my answers"
+and pastes the result in the Teams group chat.
+
+Message to post in Teams:
+```
+Week 1 homework: trace one agent session (about 45 min, due Friday 5 PM)
+
+We ran out of time for the hands-on, so here it is as homework:
+https://ai-in-development.vercel.app/homework/week-1
+
+1. Pick one small, real task (Webnext or FlexiPlan, or your current work)
+2. New Copilot chat, Agent mode, one scoped prompt (template on the page)
+3. Count the steps, files read and commands run; review the result
+4. Fill the worksheet on the page, press "Copy my answers", paste it here
+
+No customer data or secrets in prompts. Pairs (dev + QA) are welcome.
+Your numbers become our credit rules in Week 2 on Monday.
+```

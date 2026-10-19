@@ -10,12 +10,14 @@ import { Bullets, Card, Eyebrow } from "@/components/ui";
 import { defineDeck } from "@/lib/deck";
 import AgentLoop from "./AgentLoop";
 import CostCalculator from "./CostCalculator";
+import homework from "./homework";
 
 export default defineDeck({
   slug: "week-1",
   label: "Week 1",
   topic: "How coding agents work",
   date: "Monday, 19 October 2026",
+  homework,
   slides: [
     {
       title: "Title",
@@ -362,10 +364,12 @@ while True:
           eyebrow="Commitments"
           title="Before next Monday"
           items={[
-            "Trace one real agent session with the worksheet",
-            "Start a fresh session for each new task",
-            "Note your credits used, today and next Monday",
-            "Bring one session that went well and one that didn't",
+            "Trace one real agent session (homework, ~45 min)",
+            "Paste your worksheet in Teams by Friday, 5 PM",
+            "Start a fresh chat for each new task",
+            <>
+              Details: <span className="text-accent">ai-in-development.vercel.app/homework/week-1</span>
+            </>,
           ]}
           aside={
             <Card title="Next Monday · Week 2" accent>
@@ -385,7 +389,7 @@ while True:
       minutes: 4,
       notes: [
         "Close by asking everyone to say or write one habit they will try this week.",
-        "Remind: worksheets to the credit tracker by Friday.",
+        "Remind: homework at ai-in-development.vercel.app/homework/week-1, worksheet pasted in Teams by Friday 5 PM.",
       ],
       content: (
         <ClosingSlide

@@ -63,6 +63,15 @@ Anything else: write custom JSX with the blocks in `components/ui.tsx`. Interact
 - Every slide has speaker notes.
 - Check both themes (`T`) and one narrow window before presenting.
 
+## Homework page (optional)
+
+Add a `homework` field to the deck (see `decks/week-1/homework.tsx`): `{ title, due, effort, content }`.
+It is served at `/homework/<slug>` and linked from the index page. Write the content with plain
+`h2`, `p`, `ul`/`ol` and `pre` elements; the `.homework` styles in `app/globals.css` handle the rest.
+Interactive pieces (like the Week 1 worksheet that copies answers for Teams) go in the deck folder.
+
+If styles look missing after a CSS change, run `rm -rf .next` and build again (Turbopack cache).
+
 ## Presenting
 
 `→ / Space` next, `←` previous, `N` notes, `O` overview, `T` theme, `F` fullscreen.

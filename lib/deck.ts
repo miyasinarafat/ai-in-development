@@ -22,6 +22,17 @@ export type DeckDef = {
   /** Overrides SITE.presenter when someone else presents. */
   presenter?: string;
   slides: SlideDef[];
+  /** Optional homework page, served at /homework/<slug>. */
+  homework?: HomeworkDef;
+};
+
+export type HomeworkDef = {
+  title: string;
+  /** Human-readable due date, e.g. "Friday, 23 October 2026, 5 PM". */
+  due: string;
+  /** Rough effort, e.g. "About 45 minutes". */
+  effort: string;
+  content: ReactNode;
 };
 
 export function defineDeck(deck: DeckDef): DeckDef {

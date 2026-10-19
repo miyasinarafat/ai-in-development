@@ -68,3 +68,63 @@ body {
   color: var(--body-hi);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Readable document styles for homework pages (tokens only, so both themes work). */
+.homework h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--strong);
+}
+.homework h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--strong);
+}
+.homework p,
+.homework li {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--body-hi);
+}
+.homework p {
+  margin: 0.5rem 0;
+}
+.homework ol,
+.homework ul {
+  margin: 0.5rem 0 0.5rem 1.4rem;
+}
+.homework ol {
+  list-style: decimal;
+}
+.homework ul {
+  list-style: disc;
+}
+.homework li {
+  margin: 0.3rem 0;
+}
+.homework pre {
+  margin: 0.75rem 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  border: 2px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--card);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--body-hi);
+  white-space: pre-wrap;
+}
+.homework code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.92em;
+  color: var(--accent);
+}
+.homework pre code {
+  color: inherit;
+}
+.homework strong {
+  color: var(--strong);
+}
