@@ -70,6 +70,9 @@ export default function Deck({ deck }: { deck: DeckDef }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // Let interactive slide widgets (sliders, inputs) keep their own keys.
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
       switch (e.key) {
         case "ArrowRight":
         case "PageDown":
