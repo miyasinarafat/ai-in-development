@@ -58,7 +58,7 @@ export default defineDeck({
               body: (
                 <>
                   Team average
-                  <div className="mt-4 text-[64px] font-bold text-accent">___ / 4</div>
+                  <div className="mt-4 text-[64px] font-bold text-accent">1.4 / 4</div>
                   Lowest: ____________
                 </>
               ),
@@ -67,8 +67,8 @@ export default defineDeck({
               title: "Pilot repos",
               body: (
                 <>
-                  <div className="mt-2">1. ____________</div>
-                  <div className="mt-4">2. ____________</div>
+                  <div className="mt-2">1. Webnext (GP Web)</div>
+                  <div className="mt-4">2. FlexiPlan (Web)</div>
                 </>
               ),
             },
@@ -76,7 +76,7 @@ export default defineDeck({
               title: "Owners",
               body: (
                 <>
-                  <div>Skills repo: _______</div>
+                  <div>Skills repo: AI-in-Development</div>
                   <div className="mt-3">Review rubric: _______</div>
                   <div className="mt-3">Credit tracker: _______</div>
                 </>
