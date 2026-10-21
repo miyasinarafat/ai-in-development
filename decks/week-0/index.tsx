@@ -335,7 +335,7 @@ export default defineDeck({
             <Eyebrow>Decide today</Eyebrow>
             <Title>Pick 2 pilot repos and 3–4 volunteers</Title>
             <div className="mb-8 flex flex-wrap gap-4">
-              {["GP Web", "GPFI", "GP Shop", "FlexiPlan", "Roaming"].map((r) => (
+              {["Repo 1", "Repo 2", "Repo 3", "Repo 4", "Repo 5"].map((r) => (
                 <span
                   key={r}
                   className="rounded-xl border-2 border-line bg-card px-7 py-4 text-[36px] font-semibold text-strong"

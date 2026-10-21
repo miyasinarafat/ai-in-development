@@ -17,9 +17,8 @@ const homework: HomeworkDef = {
       <h2>Before you start (5 minutes)</h2>
       <ul>
         <li>
-          Pick <strong>one small, real task</strong>: under an hour by hand. Best in{" "}
-          <strong>Webnext (GP Web)</strong> or <strong>FlexiPlan (Web)</strong>; your current work is
-          fine too. QA: see the QA option below.
+          Pick <strong>one small, real task</strong>: under an hour by hand. Best in one of our{" "}
+          <strong>two pilot repos</strong>; your current work is fine too. QA: see the QA option below.
         </li>
         <li>
           <strong>No customer or subscriber data, and no secrets</strong> in the prompt, logs or files
@@ -104,7 +103,7 @@ Done when: under 10 bullet points.`}</pre>
 
       <h2>A filled example</h2>
       <p>This is an illustration of the level of detail we need, not a real result.</p>
-      <pre>{`Repo: Webnext (GP Web)        Ticket: add test for price formatter
+      <pre>{`Repo: <pilot repo>            Ticket: add test for price formatter
 Model: <model shown in Copilot>
 Agent steps: 9   Files read: 6 (needed: 2)   Commands run: 3
 Ran tests: Yes   Finished without help: Yes   Would merge: With changes

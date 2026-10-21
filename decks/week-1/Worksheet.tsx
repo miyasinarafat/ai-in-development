@@ -14,7 +14,7 @@ type Field = {
 const fields: Field[] = [
   { key: "name", label: "Your name", kind: "text" },
   { key: "partner", label: "Partner", kind: "text", optional: true },
-  { key: "repo", label: "Repo", kind: "text", hint: "Webnext (GP Web), FlexiPlan (Web), or other" },
+  { key: "repo", label: "Repo", kind: "text", hint: "One of our pilot repos, or other" },
   { key: "ticket", label: "Ticket", kind: "text", hint: "ID or one line" },
   { key: "prompt", label: "Prompt you used", kind: "area", hint: "Paste it exactly" },
   { key: "model", label: "Model", kind: "text", hint: "As shown in the Copilot model picker" },

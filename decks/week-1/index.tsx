@@ -43,8 +43,7 @@ export default defineDeck({
       title: "Recap: Week 0",
       minutes: 7,
       notes: [
-        "Fill the blanks live, or before the session if you have the numbers.",
-        "Readiness: read out the team average from last week's scorecard and the two lowest areas.",
+        "Internal numbers stay off this public slide. Read the scorecard average and the two lowest areas from your own notes.",
         "Ask each person for their one number: credits used so far this month, if they found it. If few people did, that is fine; we will show where to find it in week 2.",
         "Ask: did anyone try the scoped-prompt habit? One or two quick stories, good or bad.",
       ],
@@ -59,9 +58,9 @@ export default defineDeck({
               accent: true,
               body: (
                 <>
-                  Team average
-                  <div className="mt-4 text-[64px] font-bold text-accent">1.4 / 4</div>
-                  Lowest: ____________
+                  Baseline scored
+                  <div className="mt-4 text-[64px] font-bold text-accent">Done</div>
+                  We rescore in Week 12
                 </>
               ),
             },
@@ -69,8 +68,9 @@ export default defineDeck({
               title: "Pilot repos",
               body: (
                 <>
-                  <div className="mt-2">1. Webnext (GP Web)</div>
-                  <div className="mt-4">2. FlexiPlan (Web)</div>
+                  Chosen for the program
+                  <div className="mt-4 text-[64px] font-bold text-accent">2</div>
+                  web projects
                 </>
               ),
             },
