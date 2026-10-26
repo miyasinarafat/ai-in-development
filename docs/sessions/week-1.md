@@ -123,7 +123,7 @@ Week 1 homework: trace one agent session (about 45 min, due Friday 5 PM)
 We ran out of time for the hands-on, so here it is as homework:
 https://ai-in-development.vercel.app/homework/week-1
 
-1. Pick one small, real task (Webnext or FlexiPlan, or your current work)
+1. Pick one small, real task (in a pilot repo, or your current work)
 2. New Copilot chat, Agent mode, one scoped prompt (template on the page)
 3. Count the steps, files read and commands run; review the result
 4. Fill the worksheet on the page, press "Copy my answers", paste it here

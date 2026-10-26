@@ -34,6 +34,7 @@ The deck is a fixed 1920x1080 stage scaled to fit any screen.
 
 - `decks/<slug>/index.tsx`: slides and speaker notes for one week
 - `decks/index.ts`: registry of decks
+- `skills/<name>/SKILL.md`: the team's shared agent skills (copy into a repo's `.github/skills/`)
 - `components/templates.tsx`: reusable slide layouts
 - `components/ui.tsx`: shared building blocks
 - `components/Deck.tsx`: player (navigation, scaling, notes, overview, theme)
