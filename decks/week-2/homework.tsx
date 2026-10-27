@@ -37,7 +37,7 @@ const homework: HomeworkDef = {
           correct it before you confirm.
         </li>
         <li>Let it work. Review the result like a pull request.</li>
-        <li>Copy the five-line report it ends with.</li>
+        <li>Copy the short report it ends with.</li>
       </ol>
       <p>
         <strong>No customer or subscriber data, and no secrets</strong> in prompts, logs or files you
@@ -74,7 +74,7 @@ Do not write code.
       <h2>The six credit rules (v1)</h2>
       <ol>
         <li><strong>Fresh chat</strong> for each task.</li>
-        <li><strong>Scope it:</strong> goal, files, done when, out of scope.</li>
+        <li><strong>Scope it:</strong> goal, where, rules, out of scope, done when, if unsure.</li>
         <li><strong>Right model:</strong> light for routine work, strong for planning and hard bugs.</li>
         <li><strong>Plan first</strong> for big tasks, then implement in a fresh chat.</li>
         <li><strong>Short instruction files:</strong> they load on every call.</li>
